@@ -254,3 +254,35 @@
     width: 100%;
   }
 }
+
+/* Adjust width ratio */
+.payment-left {
+  flex: 0.65;
+}
+.payment-right {
+  flex: 0.35;
+}
+
+/* Duration selector inside summary */
+.duration-select {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--text);
+}
+
+.duration-select label {
+  font-size: 0.9rem;
+  color: var(--accent-light);
+}
+
+.duration-select select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+

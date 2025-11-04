@@ -5,17 +5,17 @@ import "./PaymentPage.css";
 const plans = {
   starter: {
     name: "Starter",
-    price: 49,
+    price: 299,
     features: [
       "1 Website",
       "10 GB SSD Storage",
       "Free SSL Certificate",
-      "Email Support",
+      "Static Deployment Panel",
     ],
   },
   business: {
     name: "Business",
-    price: 149,
+    price: 499,
     features: [
       "10 Websites",
       "100 GB SSD Storage",
@@ -25,7 +25,7 @@ const plans = {
   },
   pro: {
     name: "Pro",
-    price: 349,
+    price: 899,
     features: [
       "Unlimited Websites",
       "Unlimited SSD Storage",
@@ -40,25 +40,24 @@ const PaymentPage = () => {
   const navigate = useNavigate();
   const plan = plans[planId];
 
-  // Payment state
   const [method, setMethod] = useState("upi");
   const [terms, setTerms] = useState(false);
+  const [duration, setDuration] = useState(12);
 
   if (!plan) return <p style={{ padding: "2rem", color: "var(--text)" }}>Plan not found</p>;
 
-  // calculations
-  const base = plan.price;
-  const discount = +(base * 0.1).toFixed(2); // 10% discount
-  const gst = +((base - discount) * 0.18).toFixed(2); // 18% GST
-  const total = +(base - discount + gst).toFixed(2);
+  // pricing calculation
+  const baseAmount = plan.price * duration;
+  const discount = 292;
+  const gst = (baseAmount - discount) * 0.18;
+  const total = baseAmount - discount + gst;
 
   const handlePayment = () => {
     if (!terms) {
       alert("Please accept terms & conditions to continue.");
       return;
     }
-    // Dummy success flow
-    alert(`Payment Successful for ${plan.name} Plan! (Method: ${method.toUpperCase()})`);
+    alert(`Payment Successful for ${plan.name} Plan (${duration} months)!`);
     navigate("/");
   };
 
@@ -68,14 +67,18 @@ const PaymentPage = () => {
       <div className="payment-left card">
         <div className="left-header">
           <h2>{plan.name} Plan</h2>
-          <div className="left-price">₹{base.toFixed(2)} <span className="period">/ month</span></div>
+          <div className="left-price">
+            ₹{plan.price.toFixed(2)} <span className="period">/ month</span>
+          </div>
         </div>
 
         <div className="features">
           <h4>What you get</h4>
           <ul className="features-list">
             {plan.features.map((f, idx) => (
-              <li key={idx}><span className="tick">✓</span> {f}</li>
+              <li key={idx}>
+                <span className="tick">✓</span> {f}
+              </li>
             ))}
           </ul>
         </div>
@@ -141,7 +144,6 @@ const PaymentPage = () => {
             </label>
           </div>
 
-          {/* mock UPI QR preview for UPI method */}
           {method === "upi" && (
             <div className="upi-qr card">
               <div className="qr-left">
@@ -157,17 +159,31 @@ const PaymentPage = () => {
         </div>
       </div>
 
-      {/* RIGHT: Order summary + checkout */}
+      {/* RIGHT: Order Summary */}
       <div className="payment-right card">
         <h3 className="summary-title">Order Summary</h3>
 
+        <div className="duration-select">
+          <label htmlFor="duration">Select Duration:</label>
+          <select
+            id="duration"
+            value={duration}
+            onChange={(e) => setDuration(parseInt(e.target.value))}
+          >
+            <option value={12}>12 Months</option>
+            <option value={24}>24 Months</option>
+            <option value={36}>36 Months</option>
+            <option value={48}>48 Months</option>
+          </select>
+        </div>
+
         <div className="summary-box">
           <div className="summary-row">
-            <span>Base Price</span>
-            <span>₹{base.toFixed(2)}</span>
+            <span>Base Price ({duration} months)</span>
+            <span>₹{baseAmount.toFixed(2)}</span>
           </div>
           <div className="summary-row">
-            <span>Discount (10%)</span>
+            <span>Discount</span>
             <span className="text-negative">-₹{discount.toFixed(2)}</span>
           </div>
           <div className="summary-row">
@@ -180,7 +196,7 @@ const PaymentPage = () => {
             <span>₹{total.toFixed(2)}</span>
           </div>
           <div className="tax-note">
-            <small>Includes all applicable taxes. 30-day money-back guarantee.</small>
+            <small>Includes all applicable taxes.</small>
           </div>
         </div>
 
@@ -191,17 +207,17 @@ const PaymentPage = () => {
           </label>
         </div>
 
+        
+        
         <button className="btn btn-primary btn-pay" onClick={handlePayment}>
           Proceed to Payment • ₹{total.toFixed(2)}
         </button>
 
-        <button
-          className="btn btn-outline btn-back"
-          onClick={() => navigate(-1)}
-          style={{ marginTop: "0.8rem" }}
-        >
+        {/* <button className="btn btn-outline btn-back" onClick={() => navigate(-1)}>
           ← Back
-        </button>
+        </button> */}
+        
+        
       </div>
     </div>
   );

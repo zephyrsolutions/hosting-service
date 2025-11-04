@@ -6,20 +6,20 @@ const plans = [
   {
     id: "starter",
     name: "Starter",
-    price: 49,
+    price: 299,
     tag: "Best for beginners",
     features: [
       "1 Website",
-      "50 GB SSD Storage",
-      "Unmetered Bandwidth",
+      "10 GB SSD Storage",
+      "Static Bandwidth",
       "Free SSL",
-      "1-Click App Installer",
+      "Static Environment",
     ],
   },
   {
     id: "business",
     name: "Business",
-    price: 149,
+    price: 399,
     tag: "Most Popular",
     features: [
       "Unlimited Websites",
@@ -32,7 +32,7 @@ const plans = [
   {
     id: "pro",
     name: "Pro",
-    price: 349,
+    price: 499,
     tag: "For growing businesses",
     features: [
       "Unlimited Websites",
