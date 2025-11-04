@@ -286,3 +286,9 @@
   font-size: 0.95rem;
 }
 
+/* Fix dropdown visibility (options readable on all browsers) */
+.duration-select select option {
+  background-color: #0f172a; /* dark background to match theme */
+  color: #e2e8f0; /* light readable text */
+}
+

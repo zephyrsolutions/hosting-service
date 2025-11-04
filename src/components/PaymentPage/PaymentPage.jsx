@@ -40,7 +40,7 @@ const PaymentPage = () => {
   const navigate = useNavigate();
   const plan = plans[planId];
 
-  const [method, setMethod] = useState("upi");
+  const [method, setMethod] = useState("netbanking");
   const [terms, setTerms] = useState(false);
   const [duration, setDuration] = useState(12);
 
@@ -87,17 +87,17 @@ const PaymentPage = () => {
           <h4>Select Payment Method</h4>
 
           <div className="methods-grid">
-            <label className={`method ${method === "upi" ? "active" : ""}`}>
+            <label className={`method ${method === "netbanking" ? "active" : ""}`}>
               <input
                 type="radio"
                 name="payment"
-                value="upi"
-                checked={method === "upi"}
-                onChange={() => setMethod("upi")}
+                value="netbanking"
+                checked={method === "netbanking"}
+                onChange={() => setMethod("netbanking")}
               />
               <div className="method-body">
-                <strong>UPI</strong>
-                <small>Google Pay / PhonePe / Paytm</small>
+                <strong>NetBanking</strong>
+                <small>HDFC, SBI, ICICI, Axis and more..</small>
               </div>
             </label>
 
@@ -115,20 +115,6 @@ const PaymentPage = () => {
               </div>
             </label>
 
-            <label className={`method ${method === "netbanking" ? "active" : ""}`}>
-              <input
-                type="radio"
-                name="payment"
-                value="netbanking"
-                checked={method === "netbanking"}
-                onChange={() => setMethod("netbanking")}
-              />
-              <div className="method-body">
-                <strong>NetBanking</strong>
-                <small>HDFC, SBI, ICICI, Axis</small>
-              </div>
-            </label>
-
             <label className={`method ${method === "wallet" ? "active" : ""}`}>
               <input
                 type="radio"
@@ -140,6 +126,20 @@ const PaymentPage = () => {
               <div className="method-body">
                 <strong>Wallets</strong>
                 <small>Paytm / Amazon Pay</small>
+              </div>
+            </label>
+
+            <label className={`method ${method === "upi" ? "active" : ""}`}>
+              <input
+                type="radio"
+                name="payment"
+                value="upi"
+                checked={method === "upi"}
+                onChange={() => setMethod("upi")}
+              />
+              <div className="method-body">
+                <strong>UPI</strong>
+                <small>Google Pay / PhonePe / Paytm</small>
               </div>
             </label>
           </div>
@@ -187,7 +187,7 @@ const PaymentPage = () => {
             <span className="text-negative">-₹{discount.toFixed(2)}</span>
           </div>
           <div className="summary-row">
-            <span>GST (18%)</span>
+            <span>Tax (18%)</span>
             <span>+₹{gst.toFixed(2)}</span>
           </div>
 
