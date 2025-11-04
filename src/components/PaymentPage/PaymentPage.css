@@ -1,0 +1,256 @@
+/* PaymentPage.css - techy glassmorphism checkout */
+
+.payment-page {
+  display: flex;
+  gap: 32px;
+  padding: 48px 6%;
+  align-items: flex-start;
+  min-height: calc(100vh - 160px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+}
+
+/* Left & Right cards */
+.payment-left,
+.payment-right {
+  flex: 1;
+  padding: 22px;
+}
+
+/* Use .card from global but reinforce */
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  backdrop-filter: blur(10px) saturate(120%);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* LEFT: header */
+.left-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.left-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, var(--accent), var(--secondary));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.left-price {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
+.left-price .period {
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-left: 6px;
+  color: var(--muted);
+}
+
+/* Features */
+.features h4 {
+  margin: 8px 0;
+  color: var(--accent-light);
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 18px;
+}
+
+.features-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  color: var(--text);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.tick {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+/* Payment methods grid */
+.payment-methods h4 {
+  margin-bottom: 8px;
+  color: var(--accent-light);
+}
+
+.methods-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.method {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: all 0.18s ease;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+}
+
+.method input {
+  width: 18px;
+  height: 18px;
+}
+
+.method-body strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.method-body small {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+/* Active method highlight */
+.method.active {
+  border-color: rgba(124, 58, 237, 0.28);
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.08);
+  transform: translateY(-4px);
+}
+
+/* UPI QR mock */
+.upi-qr {
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+  padding: 12px;
+  align-items: center;
+}
+
+.qr-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-weight: 700;
+  border: 1px dashed rgba(255,255,255,0.04);
+}
+
+.qr-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* small upi input */
+.input-upi {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.02);
+  color: var(--text);
+}
+
+/* RIGHT: summary */
+.summary-title {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, var(--accent), var(--secondary));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.summary-box {
+  margin-top: 8px;
+  padding: 14px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.text-negative {
+  color: #ffb4b4;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(124,58,237,0.06), rgba(6,182,212,0.04));
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* terms */
+.terms {
+  margin-top: 14px;
+}
+
+.terms-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Buttons */
+.btn-pay {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.btn-back {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .methods-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 820px) {
+  .payment-page {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .payment-left,
+  .payment-right {
+    width: 100%;
+  }
+}

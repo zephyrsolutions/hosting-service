@@ -1,0 +1,119 @@
+:root {
+  --accent: #7c3aed; /* rich purple */
+  --accent-light: #a78bfa;
+  --secondary: #06b6d4; /* cyan */
+  --muted: #94a3b8;
+  --bg: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.1);
+  --text: #f1f5f9;
+  --gradient: linear-gradient(135deg, #7c3aed, #06b6d4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--gradient);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.3);
+}
+
+.btn-outline {
+  border: 1px solid var(--accent-light);
+  color: var(--accent-light);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--accent-light);
+  color: #0f172a;
+}
+
+/* Section Headers */
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+/* Subtle animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Glassmorphism Cards */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.2);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--secondary);
+}
+a:hover {
+  color: var(--accent-light);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-light);
+  border-radius: 10px;
+}
