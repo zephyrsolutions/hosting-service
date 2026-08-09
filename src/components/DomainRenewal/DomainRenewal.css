@@ -1,0 +1,411 @@
+.domain-renewal-page {
+  min-height: calc(100vh - 160px);
+  padding: 60px 6%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    transparent
+  );
+}
+
+.domain-renewal-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header */
+
+.domain-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.domain-header h1 {
+  margin: 0;
+
+  font-size: 2.4rem;
+
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--secondary)
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.domain-header p {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+
+/* Search */
+
+.domain-search-wrapper {
+  max-width: 750px;
+  margin: 0 auto 35px;
+}
+
+.domain-search {
+  display: flex;
+  gap: 10px;
+
+  padding: 8px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.5);
+}
+
+.domain-search input {
+  flex: 1;
+
+  padding: 14px 16px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  color: var(--text);
+
+  font-size: 1rem;
+}
+
+.domain-search input::placeholder {
+  color: var(--muted);
+}
+
+.domain-search-btn {
+  border: none;
+
+  padding: 0 25px;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  color: white;
+
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--secondary)
+  );
+
+  transition: all 0.2s ease;
+}
+
+.domain-search-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.25);
+}
+
+.domain-search-wrapper small {
+  display: block;
+
+  margin-top: 9px;
+
+  color: var(--muted);
+
+  font-size: 0.82rem;
+}
+
+
+/* Result */
+
+.domain-result {
+  padding: 28px;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.55);
+}
+
+
+/* Result header */
+
+.domain-result-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+.result-label {
+  display: block;
+
+  color: var(--muted);
+
+  font-size: 0.85rem;
+
+  margin-bottom: 5px;
+}
+
+.domain-result-header h2 {
+  margin: 0;
+
+  font-size: 1.6rem;
+
+  color: var(--text);
+}
+
+
+/* Expired badge */
+
+.expired-badge {
+  padding: 7px 14px;
+
+  border-radius: 20px;
+
+  background: rgba(239, 68, 68, 0.12);
+
+  border: 1px solid rgba(239, 68, 68, 0.25);
+
+  color: #ff9b9b;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+}
+
+
+/* Warning */
+
+.domain-warning {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  background: rgba(239, 68, 68, 0.07);
+
+  border: 1px solid rgba(239, 68, 68, 0.15);
+
+  margin-bottom: 25px;
+}
+
+.warning-icon {
+  width: 28px;
+  height: 28px;
+
+  min-width: 28px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(239, 68, 68, 0.15);
+
+  color: #ff8c8c;
+
+  font-weight: 700;
+}
+
+.domain-warning p {
+  margin: 0;
+
+  color: #ffb4b4;
+
+  font-size: 0.95rem;
+}
+
+
+/* Renewal summary */
+
+.renewal-summary {
+  padding: 18px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.renewal-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 10px 0;
+
+  color: var(--muted);
+
+  font-size: 0.95rem;
+}
+
+.renewal-row strong {
+  color: var(--text);
+}
+
+.renewal-row .discount {
+  color: #7dd3a8;
+}
+
+.renewal-divider {
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  margin: 10px 0;
+}
+
+.renewal-total {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 14px 0 5px;
+
+  font-size: 1.15rem;
+
+  color: var(--text);
+}
+
+.renewal-total strong {
+  font-size: 1.4rem;
+
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--secondary)
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* Action */
+
+.renewal-action {
+  margin-top: 20px;
+}
+
+.renew-domain-btn {
+  width: 100%;
+
+  padding: 13px 18px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--secondary)
+  );
+
+  transition: all 0.2s ease;
+}
+
+.renew-domain-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.25);
+}
+
+
+/* Not found */
+
+.domain-not-found {
+  text-align: center;
+
+  padding: 35px 20px;
+}
+
+.domain-not-found h3 {
+  margin-bottom: 10px;
+
+  color: var(--text);
+}
+
+.domain-not-found p {
+  color: var(--muted);
+
+  margin: 6px 0;
+}
+
+.domain-not-found strong {
+  color: var(--text);
+}
+
+
+/* Responsive */
+
+@media (max-width: 650px) {
+
+  .domain-renewal-page {
+    padding: 35px 20px;
+  }
+
+  .domain-header h1 {
+    font-size: 1.9rem;
+  }
+
+  .domain-search {
+    flex-direction: column;
+  }
+
+  .domain-search-btn {
+    padding: 12px;
+  }
+
+  .domain-result-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+}

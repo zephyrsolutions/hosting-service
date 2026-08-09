@@ -5,6 +5,7 @@ import Hero from "./components/Hero/Hero";
 import Pricing from "./components/Pricing/Pricing";
 import Footer from "./components/Footer/Footer";
 import PaymentPage from "./components/PaymentPage/PaymentPage";
+import DomainRenewal from "./components/DomainRenewal/DomainRenewal";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           }
         />
         <Route path="/payment/:planId" element={<PaymentPage />} />
+        <Route path="/domains" element={<DomainRenewal />} />
       </Routes>
       <Footer />
     </>

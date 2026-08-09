@@ -48,7 +48,7 @@ const PaymentPage = () => {
 
   // pricing calculation
   const baseAmount = plan.price * duration;
-  const discount = 292;
+  const discount = 200;
   const gst = (baseAmount - discount) * 0.18;
   const total = baseAmount - discount + gst;
 
@@ -66,7 +66,7 @@ const PaymentPage = () => {
       {/* LEFT: Plan details + Payment methods */}
       <div className="payment-left card">
         <div className="left-header">
-          <h2>{plan.name} Plan</h2>
+          <h2>Web Hosting - {plan.name} Plan</h2>
           <div className="left-price">
             ₹{plan.price.toFixed(2)} <span className="period">/ month</span>
           </div>
