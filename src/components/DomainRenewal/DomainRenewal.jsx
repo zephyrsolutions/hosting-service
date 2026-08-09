@@ -96,7 +96,7 @@ const DomainRenewal = () => {
 
             <input
               type="text"
-              placeholder="Enter your domain e.g. t3enterprise.in"
+              placeholder="Enter your domain.."
               value={domain}
               onChange={(e) => setDomain(e.target.value)}
               onKeyDown={handleKeyDown}
