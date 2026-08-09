@@ -47,8 +47,22 @@ const PaymentPage = () => {
   if (!plan) return <p style={{ padding: "2rem", color: "var(--text)" }}>Plan not found</p>;
 
   // pricing calculation
+  // const baseAmount = plan.price * duration;
+  // const discount = 200;
+  // const gst = (baseAmount - discount) * 0.18;
+  // const total = baseAmount - discount + gst;
+
+
+    const discounts = {
+    12: 200,
+    24: 450,
+    36: 1000,
+    48: 1500,
+    60: 2000,
+  };
+
   const baseAmount = plan.price * duration;
-  const discount = 200;
+  const discount = discounts[duration] || 0;
   const gst = (baseAmount - discount) * 0.18;
   const total = baseAmount - discount + gst;
 
@@ -165,6 +179,7 @@ const PaymentPage = () => {
 
         <div className="duration-select">
           <label htmlFor="duration">Select Duration:</label>
+
           <select
             id="duration"
             value={duration}
@@ -174,6 +189,7 @@ const PaymentPage = () => {
             <option value={24}>24 Months</option>
             <option value={36}>36 Months</option>
             <option value={48}>48 Months</option>
+            <option value={60}>60 Months</option>
           </select>
         </div>
 
